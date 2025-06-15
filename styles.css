@@ -27,6 +27,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color: var(--pastel-purple);
 }
 
 .navbar {
@@ -94,18 +95,23 @@ main p {
     margin: 0 auto;
 }
 
-.fact-card {
+/* Fact Cards Animation */
+.fact-card, .fact-item {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 1.5);
+    transform: scale(1);
+    position: relative;
 }
 
-.fact-card:hover {
-    transform: translateY(-5px);
+.fact-card:hover, .fact-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
-.fact-card h3 {
+.fact-card h3, .fact-item h3 {
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
@@ -127,17 +133,6 @@ main p {
     gap: 1.5rem;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-.fact-item {
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.fact-item h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
 }
 
 /* Footer */
